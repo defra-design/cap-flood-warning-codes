@@ -98,6 +98,14 @@
         background-position: 100% 50%;
     }
 }
+.defra-flood-status-item--extreme {
+    background-color: mix(white, #000000, 10%);
+    border-color:#000000;
+    color: white;
+    .defra-flood-status-item__icon:after {
+        background-position: 100% 50%;
+    }
+}
 /*
 .defra-flood-status-item--removed {
     .defra-flood-status-item__icon:after {
