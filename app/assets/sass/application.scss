@@ -1,0 +1,49 @@
+// global styles for <a> and <p> tags
+$govuk-global-styles: true;
+
+// We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework.
+$govuk-assets-path: '/govuk/assets/';
+$govuk-images-path: '/public/images/';
+
+// Import GOV.UK Frontend and any extension styles if extensions have been configured
+@import "lib/extensions/extensions";
+
+// Settings
+
+// Tools
+@import "tools/mixins";
+
+// Generic
+
+// Elements
+
+// Objects
+@import "objects/lists";
+@import "objects/typography";
+@import "objects/buttons";
+@import "objects/inputs";
+@import "objects/links";
+
+// Components
+@import "components/cookie-banner";
+@import "components/flood-status";
+@import "components/flood-nav";
+@import "components/flood-statistics";
+@import "components/flood-impact-list";
+@import "components/contents";
+@import "components/related-items";
+@import "components/map";
+@import "components/bar-chart";
+@import "components/line-chart";
+@import "components/banners";
+@import "components/flood-details";
+@import "components/flood-tabs";
+@import "components/search";
+@import "components/updated";
+@import "components/service-error";
+
+// Tools
+@import "utilities/summary-list";
+
+// Utilities
+@import "utilities/summary-list";

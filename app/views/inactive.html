@@ -1,0 +1,161 @@
+
+{% extends "layout.html" %}
+{% from "govuk/components/tabs/macro.njk" import govukTabs %}
+
+{% block pageTitle %}
+  Inactive
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-m govuk-!-padding-top-6 govuk-!-padding-bottom-6">Meta content</h2>
+    <p>&lt;title&gt;<!-- Start -->Ginge Brook flood risk area - GOV.UK<!-- End -->&lt;/title&gt;</p>
+    <p>&lt;meta name=&quot;description&quot; content=&quot;<!-- Start -->Flood risk in formation for people living in the Gonge Brooke area<!-- End -->&quot; /meta&gt;</p>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-m govuk-!-padding-top-6 govuk-!-padding-bottom-6">Page content</h2>
+  </div>
+</div>
+
+<!-- Start -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full" id="browserBackContainer">
+    <nav><a href="" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-right-2">Back</a></nav>
+  </div>
+</div>
+  
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="defra-flood-status govuk-!-margin-bottom-3">
+      <div class="defra-flood-status-item defra-flood-status-item">
+        <div class="defra-flood-status-item__text">
+          <strong>No flood alert or warning currently in place</strong>
+        </div>
+      </div>
+    </div>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
+      Ginge Brook flood risk area
+    </h1>
+    <p class="defra-updated govuk-!-margin-bottom-7">
+      Updated <time datetime="2020-03-30T08:55:00.000Z">at 9:55am on 30 March 2020</time>
+    </p>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <p>This is an area at risk of flooding. When flood alerts and warnings are in place in the area, we update this page with information about them.
+    <p>You can <a href="https://www.gov.uk/sign-up-for-flood-warnings">get flood warnings by phone, text or email</a> for this area.</p>
+    <p>Flood risk area: Ginge Brook, for the Steventon area down to and including Sutton Courtenay</p>
+    <button id="map-btn" class="defra-button-map govuk-!-margin-bottom-6">View map of the flood risk area</button><div class="defra-map" id="map-live"></div>
+    <h2 class="govuk-heading-m">Check river or sea levels</h2>
+    <p class="govuk-body"><a href="/river-and-sea-levels">Check river or sea levels in this area</a>.</p>
+    <h2 class="govuk-heading-m govuk-!-margin-top-2">Forecast for the region</h2>
+    {% set dayOne %}
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Today</h3>
+    <p>Medium risk from river flooding with a high likelihood of significant impacts.</p>
+    {% endset -%}
+    {% set dayTwo%}
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Tomorrow</h3>
+    <p>Medium risk from river flooding with a high likelihood of significant impacts.</p>
+    {% endset -%}
+    {% set dayThree %}
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Thursday</h3>
+    <p>Medium risk from river flooding with a high likelihood of significant impacts.</p>
+    {% endset -%}
+    {% set dayFour %}
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Friday</h3>
+    <p>Low risk from river flooding with a high likelihood of minor impacts</p>
+    {% endset -%}
+    {% set dayFive %}
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Saturday</h3>
+    <p>Low risk from river flooding with a high likelihood of minor impacts</p>
+    {% endset -%}
+    {{ govukTabs({
+      classes: 'defra-flood-tabs govuk-!-padding-top-2',
+      items: [
+        {
+          label: "Today",
+          id: "day-one",
+          panel: {
+            html: dayOne
+          }
+        },
+        {
+          label: "Tomorrow",
+          id: "day-two",
+          panel: {
+            html: dayTwo
+          }
+        },
+        {
+          label: "Thursday",
+          id: "day-three",
+          panel: {
+            html: dayThree
+          }
+        },
+        {
+          label: "Friday",
+          id: "day-four",
+          panel: {
+            html: dayFour
+          }
+        },
+        {
+          label: "Saturday",
+          id: "day-five",
+          panel: {
+            html: dayFive
+          }
+        }
+      ]
+    }) }}
+    <p class="defra-updated govuk-!-margin-bottom-4">
+      <time datetime="">Updated yesterday at 3:30pm</time>. Produced by the Met Office and Environment Agency.
+    </p>
+    <h2 class="govuk-heading-m">Call Floodline</h2>
+    <p>Call Floodline for advice about flooding from rivers, the sea and groundwater.</p>
+    <p>Telephone: 0345 988 1188<br>Textphone: 0345 602 6340<br>Open 24 hours a day, 7 days a week.<br><a href="https://gov.uk/call-charges">Find out more about call charges</a>.</p>
+    <p><a href="https://www.gov.uk/find-local-council">Contact your local council</a> if there's flooding in your area, but you're not sure what the source is.</p>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <!-- The Related items component is not part of GOV.UK Frontend but will be styled if used in the Prototype Kit -->
+    <aside class="defra-related-items" role="complementary" style="border-width:2px">
+      <h2 class="govuk-heading-s" id="subsection-title">
+        Related content
+      </h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <a class="govuk-link" href="/plan-ahead-for-flooding">
+              How to plan ahead for flooding
+            </a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/what-to-do-in-a-flood">
+              What to do in a flood
+            </a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/recovering-after-a-flood">
+              How to recover after a flood
+            </a>
+          </li>
+          <li>
+            <a class="govuk-link" href="#">
+              View long term flood risk information
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+  </div>
+</div>
+<!-- End -->
+
+{% endblock %}

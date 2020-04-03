@@ -1,0 +1,37 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Target area examples
+{% endblock %}
+
+{% block content %}
+<style>
+  .govuk-table tr th:first-child {
+    white-space:nowrap;
+  }
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Target area examples
+    </h1>
+    <p>
+      This resource is for testing Target Area pages.
+    </p> 
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">  
+    <ul class="govuk-list">
+      <li><a href="/inactive">Inactive</a></li>
+      <li><a href="/removed">Removed</a></li> 
+      <li><a href="/alert">Alert</a></li> 
+      <li><a href="/warning">Warning</a></li> 
+      <li><a href="/severe">Severe</a></li>
+    </ul>
+  </div>
+</div>
+
+{% endblock %}
