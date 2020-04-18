@@ -1,0 +1,95 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  River Coln and its tributaries 
+{% endblock %}
+
+{% block content %}
+
+<!-- Start -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full" id="browserBackContainer">
+    <nav><a href="/" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-right-2">Back</a></nav>
+  </div>
+</div>
+  
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="defra-flood-status govuk-!-margin-bottom-4">
+      <div class="defra-flood-status-item defra-flood-status-item--alert">
+        <span class="defra-flood-status-item__icon"></span>
+        <div class="defra-flood-status-item__text">
+          <strong>Minor flooding is possible in the near future.</strong>
+          <strong>Monitor the situation.</strong>
+        </div>
+      </div>
+    </div>
+    <h1 class="govuk-heading-xl">
+      River Coln and its tributaries
+    </h1>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<h2 class="govuk-heading-m">Latest information</h2>
+<p class="defra-updated govuk-!-margin-bottom-4">
+  Updated <time datetime="2020-03-30T08:55:00.000Z">10:34am Saturday 18 April 2020</time>
+</p>
+</div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <p>Property flooding is not currently expected. River levels are high but steady and within banks on the River Coln as a result of raised groundwater levels. The risk of flooding remains, especially in the Fairford area. The rain we saw overnight has now mostly cleared away to the North although we could see some heavy showers through the day. Tomorrow (Sunday) is expected to be dry. We are closely monitoring the situation. Please remain safe and aware of your local surroundings and refer to the 'River and Sea levels in England' webpage for current river levels. This message will be updated on 19/04/20, or as the situation changes.</p>
+
+    <p>Flood risk area: River Coln and its tributaries from Whittington to the confluence with The River Thames</p>
+    <button id="map-btn" class="defra-button-map govuk-!-margin-bottom-6">View map of the flood risk area</button><div class="defra-map" id="map-live"></div>
+
+    <h2 class="govuk-heading-m">Other ways to check your current flood risk</h2>
+    <p>If you live near a river or the coast you may be able to <a href="https://www.gov.uk/sign-up-for-flood-warnings">get flood warnings by phone, text or email</a>. This service is free.</p>
+    <p>For river and sea flooding, call the 24-hour Floodline service.</p>
+    <p>
+      Telephone: 0345 988 1188<br>
+      Type talk: 0345 602 6340 (for the hard of hearing)<br>
+      <a href="https://gov.uk/call-charges">Find out more about call charges</a>.
+    </p>  
+    <p><a href="https://www.gov.uk/find-local-council">Contact your local council</a> if you are not sure of the source of flooding.</p>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <!-- The Related items component is not part of GOV.UK Frontend but will be styled if used in the Prototype Kit -->
+    <aside class="defra-related-items" role="complementary" style="border-width:2px">
+      <h2 class="govuk-heading-s" id="subsection-title">
+        Related content
+      </h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <a class="govuk-link" href="/plan-ahead-for-flooding">
+              How to plan ahead for flooding
+            </a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/what-to-do-in-a-flood">
+              What to do in a flood
+            </a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/recovering-after-a-flood">
+              How to recover after a flood
+            </a>
+          </li>
+          <li>
+            <a class="govuk-link" href="#">
+              View long term flood risk information
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+  </div>
+</div>
+<!-- End -->
+
+{% endblock %}
