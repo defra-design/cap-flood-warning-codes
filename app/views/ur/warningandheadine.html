@@ -1,0 +1,119 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Warning
+{% endblock %}
+
+{% block content %}
+
+<!-- Start -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full" id="browserBackContainer">
+    <nav><a href="/" class="govuk-back-link govuk-!-margin-bottom-7 govuk-!-margin-right-2">Back</a></nav>
+  </div>
+</div>
+  
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="defra-flood-status govuk-!-margin-bottom-3">
+      <div class="defra-flood-status-item defra-flood-status-item--warning">
+        <span class="defra-flood-status-item__icon"></span>
+        <div class="defra-flood-status-item__text">
+          <strong>Flooding is possible.</strong>
+          <strong>Monitor the situation.</strong>          
+        </div>
+      </div>
+    </div>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
+      East Sussex coast at Denge Marsh
+    </h1>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<h2 class="govuk-heading-m">Headline</h2>
+<p class="defra-updated govuk-!-margin-bottom-4">
+  Updated <time datetime="2020-03-30T08:55:00.000Z">10:34am Saturday 18 April 2020</time>
+</p>
+</div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <p>Property flooding is possible in the Denge Marsh area.</p>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<h2 class="govuk-heading-m">Detailed information</h2>
+</div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <p>This Flood Warning has been issued as large waves and high tides along the south coast have been removing shingle from Denge Beach, increasing risk of property flooding. Flooding is possible at high tide this afternoon between 12pm and 3:30pm, Tuesday 01/10/2019. Properties particularly at risk include the Coastguard Cottages and Midrips Cottages, East of Jury’s Gap. Our staff are on site to replenish the shingle and will remain on site to assess further damage. High tides will continue to increase the risk of flooding until Wednesday evening, 02/10/2019. Our incident response staff have been liaising with emergency services. Please be careful along the beach, promenades, coastal footpaths and roads, as large waves and sea spray could be dangerous. This message will be updated by 21:00 on Tuesday 01/10/19, or sooner if the situation changes. More detailed information for those who need it: total water level for Rye is forecast to be 4.81mAOD at 13:45 on 01/10/2019.</p>
+    <p>Flood risk area: Denge Marsh, including Coastguard Cottages and Midrips Cottages, East of Jury's Gap</p>
+    <button id="map-btn" class="defra-button-map govuk-!-margin-bottom-6">View map of the flood risk area</button><div class="defra-map" id="map-live"></div>
+
+
+    <h2 class="govuk-heading-m">Advice</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Monitor local water levels and weather conditions</li>
+      <li>Act on your flood plan if you have one</li>
+      <li>Move your car or other vehicles to higher ground, if it is safe to do so</li>
+      <li>Farmers should consider moving livestock and equipment away from areas likely to flood</li>
+      <li>Avoid walking, cycling or driving through flood water. 30 cm of fast-flowing water can move a car and 6 inches can knock an adult off their feet</li>
+      <li>Flood water is dangerous and may be polluted. Wash your hands thoroughly if you've been in contact with it</li>
+      <li><a href="/river-and-sea-levels">Check the river levels in this area</a></li>
+    </ul>
+
+    <h2 class="govuk-heading-m">Other ways to check your current flood risk</h2>
+    <p>If you live near a river or the coast you may be able to <a href="https://www.gov.uk/sign-up-for-flood-warnings">get flood warnings by phone, text or email</a>. This service is free.</p>
+    <p>For river and sea flooding, call the 24-hour Floodline service.</p>
+    <p>
+      Telephone: 0345 988 1188<br>
+      Type talk: 0345 602 6340 (for the hard of hearing)<br>
+      <a href="https://gov.uk/call-charges">Find out more about call charges</a>.
+    </p>  
+    <p><a href="https://www.gov.uk/find-local-council">Contact your local council</a> if you are not sure of the source of flooding.</p>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <!-- The Related items component is not part of GOV.UK Frontend but will be styled if used in the Prototype Kit -->
+    <aside class="defra-related-items" role="complementary" style="border-width:2px">
+      <h2 class="govuk-heading-s" id="subsection-title">
+        Related content
+      </h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <a class="govuk-link" href="/plan-ahead-for-flooding">
+              How to plan ahead for flooding
+            </a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/what-to-do-in-a-flood">
+              What to do in a flood
+            </a>
+          </li>
+          <li>
+            <a class="govuk-link" href="/recovering-after-a-flood">
+              How to recover after a flood
+            </a>
+          </li>
+          <li>
+            <a class="govuk-link" href="#">
+              View long term flood risk information
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+  </div>
+</div>
+<!-- End -->
+
+
+{% endblock %}
