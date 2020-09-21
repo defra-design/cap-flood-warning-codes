@@ -1,359 +1,399 @@
 
-{% extends "layout.html" %}
-
-{% block pageTitle %}
-  CAP demo
-{% endblock %}
-
-{% block content %}
-<style>
-  .govuk-table tr th:first-child {
-    white-space:nowrap;
-  }
-</style>
-
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">
-      Common Alerting Protocol demo
-    </h1>
-    <p>
-      This site contains mock ups of flood warning messages presented with <a href="https://docs.oasis-open.org/emergency/cap/v1.2/CAP-v1.2-os.html">Common Alerting Protocol (CAP)</a> information as it could be displayed on the new Flood Information Service pages on GOV.UK.
-    </p> 
-    <p>The main CAP fields looked at are:</p>
-    <ul class="govuk-list govuk-list--bullet">
-    <li>Severity</li>
-    <li>Certainty</li>
-    <li>Response</li>
-    </ul>
-    </p>
-    <p>
-      "Urgency" could be used as a mechanism for prioritising the message sending process - for example, a warning with an "immediate" urgency will be issued before a warning with a "future" urgency. We could use the "Response" field to show specific actions for the incident.
-    </p>
-    <p>
-      We do not have an equivalent of the "Extreme" severity status in the flood warning service. We could use this status for exceptional events, where there is extraordinary threat to life or property. As an example, a failure of a reservoir or defence where rapid destruction of properties behind the assets is expected.</p>  
-    <p>
-      These are just examples. Not all combinations of CAP will be appropriate for the flood warning service.
-    </p>
+	{% extends "layout.html" %} {% block pageTitle %} CAP demo {% endblock %} {% block content %}
+	<style>
+	 .govuk-table tr th:first-child {
+	   white-space:nowrap;
+	 }
+	</style>
+	<div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds">
+			<h1 class="govuk-heading-xl">Common Alerting Protocol demo</h1>
+			<p>This site contains mock ups of flood warning messages presented with <a href="https://docs.oasis-open.org/emergency/cap/v1.2/CAP-v1.2-os.html">Common Alerting Protocol (CAP)</a> information as it could be displayed on the new Flood Information Service pages on GOV.UK.</p>
+			<p>The main CAP fields looked at are:</p>
+			<ul class="govuk-list govuk-list--bullet">
+				<li>Severity</li>
+				<li>Certainty</li>
+				<li>Response</li>
+			</ul>
+			<p></p>
+			<p>"Urgency" could be used as a mechanism for prioritising the message sending process - for example, a warning with an "immediate" urgency will be issued before a warning with a "future" urgency. We could use the "Response" field to show specific actions for the incident.</p>
+			<p>We do not have an equivalent of the "Extreme" severity status in the flood warning service. We could use this status for exceptional events, where there is extraordinary threat to life or property. As an example, a failure of a reservoir or defence where rapid destruction of properties behind the assets is expected.</p>
+			<p>These are just examples. Not all combinations of CAP will be appropriate for the flood warning service.</p>
+		</div>
+	</div>
+	<h2 class="govuk-heading-l">Simple example messages</h2>
+	<h3 class="govuk-heading-m">Minor flooding</h3>
+	<ul class="govuk-list govuk-list--bullet">
+		<li>
+			<a class="govuk-link" href="cap/alert/MinorPossible">Minor flooding is possible</a>
+		</li>
+		<li>
+			<a class="govuk-link" href="cap/alert/MinorLikely">Minor flooding is likely</a>
+		</li>
+		<li>
+			<a class="govuk-link" href="cap/alert/MinorObserved">Minor flooding is occurring</a>
+		</li>
+	</ul>
+	<h3 class="govuk-heading-m">Flooding</h3>
+	<ul class="govuk-list govuk-list--bullet">
+		<li>
+			<a class="govuk-link" href="cap/warning/ModeratePossible.html">Flooding is possible</a>
+		</li>
+		<li>
+			<a class="govuk-link" href="cap/warning/ModerateLikely.html">Flooding is likely</a>
+		</li>
+		<li>
+			<a class="govuk-link" href="cap/warning/ModerateObserved.html">Flooding is occurring</a>
+		</li>
+	</ul>
+	<h3 class="govuk-heading-m">Severe flooding</h3>
+	<ul class="govuk-list govuk-list--bullet">
+		<li>
+			<a class="govuk-link" href="cap/severe/SeverePossible.html">Severe flooding is possible</a>
+		</li>
+		<li>
+			<a class="govuk-link" href="cap/severe/SevereLikely.html">Severe flooding is likely</a>
+		</li>
+		<li>
+			<a class="govuk-link" href="cap/severe/SevereObserved.html">Severe flooding is occurring</a>
+		</li>
+	</ul>
+	<h3 class="govuk-heading-m">Additional ideas</h3>
+	<p>These examples include a "Headline" field which is also part of CAP. We can use this field to show a brief description of the key flood information in that location.</p>
+	<ul class="govuk-list govuk-list--bullet">
+		<li>
+			<a class="govuk-link" href="/ur/alertandheadline">Minor flooding with headline</a>
+		</li>
+		<li>
+			<a class="govuk-link" href="/ur/warningandheadine">Flooding with headline</a>
+		</li>
+		<li>
+			<a class="govuk-link" href="/ur/severeandheadline">Severe flooding with headline</a>
+		</li>
+	</ul>
+	<h2 class="govuk-heading-l">Detailed example messages</h2>
+	<div class="govuk-grid-row">
+		<div class="govuk-accordion" data-module="govuk-accordion" id="accordion-with-summary-sections">
+			<div class="govuk-accordion__section">
+				<div class="govuk-accordion__section-header">
+					<h2 class="govuk-accordion__section-heading"><span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1">Minor flooding</span></h2>
+				</div>
+				<div aria-labelledby="accordion-default-heading-1" class="govuk-accordion__section-content" id="accordion-default-content-1">
+					<p class='govuk-body'>This is broadly equivalent to the existing Flood Alert status. They should be issued for low impact flooding. This could be shallow, slow moving flooding of roads and footpaths, or flooding of areas with little to no impact on people - such as fields or farmland.</p>
+				</div>
+				<div aria-labelledby="accordion-with-summary-sections-heading-1" class="govuk-accordion__section-content" id="accordion-with-summary-sections-content-1">
+					<table class="govuk-table">
+						<thead class="govuk-table__head">
+							<tr class="govuk-table__row">
+								<th class="govuk-table__header" scope="col">Severity</th>
+								<th class="govuk-table__header" scope="col">Certainty</th>
+								<th class="govuk-table__header" scope="col">Response</th>
+								<th class="govuk-table__header" scope="col">Link</th>
+							</tr>
+						</thead>
+						<tbody class="govuk-table__body">
+							<tr class="govuk-table__row">
+								<td class="govuk-table__cell">Minor</td>
+								<td class="govuk-table__cell">Possible</td>
+								<td class="govuk-table__cell">Prepare</td>
+								<td>
+									<a class="govuk-link" href="cap/alert/MinorPossiblePrepare">Click here</a>
+								</td>
+							</tr>
+							<tr class="govuk-table__row">
+								<td class="govuk-table__cell">Minor</td>
+								<td class="govuk-table__cell">Possible</td>
+								<td class="govuk-table__cell">Monitor</td>
+								<td>
+									<a class="govuk-link" href="cap/alert/MinorPossibleMonitor">Click here</a>
+								</td>
+							</tr>
+							<tr class="govuk-table__row">
+								<td class="govuk-table__cell">Minor</td>
+								<td class="govuk-table__cell">Possible</td>
+								<td class="govuk-table__cell">Avoid</td>
+								<td>
+									<a class="govuk-link" href="cap/alert/MinorPossibleAvoid">Click here</a>
+								</td>
+							</tr>
+							<tr class="govuk-table__row">
+								<td class="govuk-table__cell">Minor</td>
+								<td class="govuk-table__cell">Likely</td>
+								<td class="govuk-table__cell">Prepare</td>
+								<td>
+									<a class="govuk-link" href="cap/alert/MinorLikelyPrepare">Click here</a>
+								</td>
+							</tr>
+							<tr class="govuk-table__row">
+								<td class="govuk-table__cell">Minor</td>
+								<td class="govuk-table__cell">Likely</td>
+								<td class="govuk-table__cell">Monitor</td>
+								<td>
+									<a class="govuk-link" href="cap/alert/MinorLikelyMonitor">Click here</a>
+								</td>
+							</tr>
+							<tr class="govuk-table__row">
+								<td class="govuk-table__cell">Minor</td>
+								<td class="govuk-table__cell">Likely</td>
+								<td class="govuk-table__cell">Avoid</td>
+								<td>
+									<a class="govuk-link" href="cap/alert/MinorLikelyAvoid">Click here</a>
+								</td>
+							</tr>
+							<tr class="govuk-table__row">
+								<td class="govuk-table__cell">Minor</td>
+								<td class="govuk-table__cell">Likely</td>
+								<td class="govuk-table__cell">Execute</td>
+								<td>
+									<a class="govuk-link" href="cap/alert/MinorLikelyExecute">Click here</a>
+								</td>
+							</tr>
+							<tr class="govuk-table__row">
+								<td class="govuk-table__cell">Minor</td>
+								<td class="govuk-table__cell">Observed</td>
+								<td class="govuk-table__cell">Avoid</td>
+								<td>
+									<a class="govuk-link" href="cap/alert/MinorObservedAvoid">Click here</a>
+								</td>
+							</tr>
+							<tr class="govuk-table__row">
+								<td class="govuk-table__cell">Minor</td>
+								<td class="govuk-table__cell">Observed</td>
+								<td class="govuk-table__cell">Execute</td>
+								<td>
+									<a class="govuk-link" href="cap/alert/MinorObservedExecute">Click here</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="govuk-accordion__section">
+				<div class="govuk-accordion__section-header">
+					<h2 class="govuk-accordion__section-heading"><span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-2">Flooding</span></h2>
+				</div>
+				<div aria-labelledby="accordion-default-heading-1" class="govuk-accordion__section-content" id="accordion-default-content-1">
+					<p class='govuk-body'>This is equivalent of Flood Warning status. They should be issued when flooding of properties is expected, or when the flooding will impact people, such as flooding of major roads or infrastructure</p>
+				</div>
+				<div aria-labelledby="accordion-with-summary-sections-heading-1" class="govuk-accordion__section-content" id="accordion-with-summary-sections-content-1">
+					<table class="govuk-table">
+						<thead class="govuk-table__head">
+							<tr class="govuk-table__row">
+								<th class="govuk-table__header" scope="col">Severity</th>
+								<th class="govuk-table__header" scope="col">Certainty</th>
+								<th class="govuk-table__header" scope="col">Response</th>
+								<th class="govuk-table__header" scope="col">Link</th>
+							</tr>
+						</thead>
+						<tbody class="govuk-table__body">
+							<tr class="govuk-table__row">
+								<td class="govuk-table__cell">Moderate</td>
+								<td class="govuk-table__cell">Possible</td>
+								<td class="govuk-table__cell">Prepare</td>
+								<td>
+									<a class="govuk-link" href="cap/warning/ModeratePossiblePrepare">Click here</a>
+								</td>
+							</tr>
+							<tr class="govuk-table__row">
+								<td class="govuk-table__cell">Moderate</td>
+								<td class="govuk-table__cell">Possible</td>
+								<td class="govuk-table__cell">Monitor</td>
+								<td>
+									<a class="govuk-link" href="cap/warning/ModeratePossibleMonitor">Click here</a>
+								</td>
+							</tr>
+							<tr class="govuk-table__row">
+								<td class="govuk-table__cell">Moderate</td>
+								<td class="govuk-table__cell">Possible</td>
+								<td class="govuk-table__cell">Avoid</td>
+								<td>
+									<a class="govuk-link" href="cap/warning/ModeratePossibleAvoid">Click here</a>
+								</td>
+							</tr>
+							<tr class="govuk-table__row">
+								<td class="govuk-table__cell">Moderate</td>
+								<td class="govuk-table__cell">Likely</td>
+								<td class="govuk-table__cell">Prepare</td>
+								<td>
+									<a class="govuk-link" href="cap/warning/ModerateLikelyPrepare">Click here</a>
+								</td>
+							</tr>
+							<tr class="govuk-table__row">
+								<td class="govuk-table__cell">Moderate</td>
+								<td class="govuk-table__cell">Likely</td>
+								<td class="govuk-table__cell">Monitor</td>
+								<td>
+									<a class="govuk-link" href="cap/warning/ModerateLikelyMonitor">Click here</a>
+								</td>
+							</tr>
+							<tr class="govuk-table__row">
+								<td class="govuk-table__cell">Moderate</td>
+								<td class="govuk-table__cell">Likely</td>
+								<td class="govuk-table__cell">Avoid</td>
+								<td>
+									<a class="govuk-link" href="cap/warning/ModerateLikelyAvoid">Click here</a>
+								</td>
+							</tr>
+							<tr class="govuk-table__row">
+								<td class="govuk-table__cell">Moderate</td>
+								<td class="govuk-table__cell">Likely</td>
+								<td class="govuk-table__cell">Execute</td>
+								<td>
+									<a class="govuk-link" href="cap/warning/ModerateLikelyExecute">Click here</a>
+								</td>
+							</tr>
+							<tr class="govuk-table__row">
+								<td class="govuk-table__cell">Moderate</td>
+								<td class="govuk-table__cell">Observed</td>
+								<td class="govuk-table__cell">Avoid</td>
+								<td>
+									<a class="govuk-link" href="cap/warning/ModerateObservedAvoid">Click here</a>
+								</td>
+							</tr>
+							<tr class="govuk-table__row">
+								<td class="govuk-table__cell">Moderate</td>
+								<td class="govuk-table__cell">Observed</td>
+								<td class="govuk-table__cell">Execute</td>
+								<td>
+									<a class="govuk-link" href="cap/warning/ModerateObservedExecute">Click here</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="govuk-accordion__section">
+				<div class="govuk-accordion__section-header">
+					<h2 class="govuk-accordion__section-heading"><span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-3">Severe flooding</span></h2>
+				</div>
+				<div aria-labelledby="accordion-default-heading-1" class="govuk-accordion__section-content" id="accordion-default-content-1">
+					<p class='govuk-body'>This is equivalent of Severe Flood Warning status. They should be issued when there is a risk to life or significant disruption for people in that area - including infrastructure impacts. Flood waters may be deep or fast flowing. Evacuations may be required and emergency services and local authorities will be involved.</p>
+				</div>
+				<div aria-labelledby="accordion-with-summary-sections-heading-1" class="govuk-accordion__section-content" id="accordion-with-summary-sections-content-1">
+					<table class="govuk-table">
+						<thead class="govuk-table__head">
+							<tr class="govuk-table__row">
+								<th class="govuk-table__header" scope="col">Severity</th>
+								<th class="govuk-table__header" scope="col">Certainty</th>
+								<th class="govuk-table__header" scope="col">Response</th>
+								<th class="govuk-table__header" scope="col">Link</th>
+							</tr>
+						</thead>
+						<tbody class="govuk-table__body">
+							<tr class="govuk-table__row">
+								<td class="govuk-table__cell">Severe</td>
+								<td class="govuk-table__cell">Possible</td>
+								<td class="govuk-table__cell">Prepare</td>
+								<td>
+									<a class="govuk-link" href="cap/severe/SeverePossiblePrepare">Click here</a>
+								</td>
+							</tr>
+							<tr class="govuk-table__row">
+								<td class="govuk-table__cell">Severe</td>
+								<td class="govuk-table__cell">Possible</td>
+								<td class="govuk-table__cell">Monitor</td>
+								<td>
+									<a class="govuk-link" href="cap/severe/SeverePossibleMonitor">Click here</a>
+								</td>
+							</tr>
+							<tr class="govuk-table__row">
+								<td class="govuk-table__cell">Severe</td>
+								<td class="govuk-table__cell">Possible</td>
+								<td class="govuk-table__cell">Avoid</td>
+								<td>
+									<a class="govuk-link" href="cap/severe/SeverePossibleAvoid">Click here</a>
+								</td>
+							</tr>
+							<tr class="govuk-table__row">
+								<td class="govuk-table__cell">Severe</td>
+								<td class="govuk-table__cell">Likely</td>
+								<td class="govuk-table__cell">Monitor</td>
+								<td>
+									<a class="govuk-link" href="cap/severe/SevereLikelyMonitor">Click here</a>
+								</td>
+							</tr>
+							<tr class="govuk-table__row">
+								<td class="govuk-table__cell">Severe</td>
+								<td class="govuk-table__cell">Likely</td>
+								<td class="govuk-table__cell">Avoid</td>
+								<td>
+									<a class="govuk-link" href="cap/severe/SevereLikelyAvoid">Click here</a>
+								</td>
+							</tr>
+							<tr class="govuk-table__row">
+								<td class="govuk-table__cell">Severe</td>
+								<td class="govuk-table__cell">Likely</td>
+								<td class="govuk-table__cell">Execute</td>
+								<td>
+									<a class="govuk-link" href="cap/severe/SevereLikelyExecute">Click here</a>
+								</td>
+							</tr>
+							<tr class="govuk-table__row">
+								<td class="govuk-table__cell">Severe</td>
+								<td class="govuk-table__cell">Likely</td>
+								<td class="govuk-table__cell">Evacuate</td>
+								<td>
+									<a class="govuk-link" href="cap/severe/SevereLikelyEvacuate">Click here</a>
+								</td>
+							</tr>
+							<tr class="govuk-table__row">
+								<td class="govuk-table__cell">Severe</td>
+								<td class="govuk-table__cell">Observed</td>
+								<td class="govuk-table__cell">Avoid</td>
+								<td>
+									<a class="govuk-link" href="cap/severe/SevereObservedAvoid">Click here</a>
+								</td>
+							</tr>
+							<tr class="govuk-table__row">
+								<td class="govuk-table__cell">Severe</td>
+								<td class="govuk-table__cell">Observed</td>
+								<td class="govuk-table__cell">Evacuate</td>
+								<td>
+									<a class="govuk-link" href="cap/severe/SevereObservedEvacuate">Click here</a>
+								</td>
+							</tr>
+							<tr class="govuk-table__row">
+								<td class="govuk-table__cell">Severe</td>
+								<td class="govuk-table__cell">Observed</td>
+								<td class="govuk-table__cell">Shelter</td>
+								<td>
+									<a class="govuk-link" href="cap/severe/SevereObservedShelter">Click here</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="govuk-accordion__section">
+				<div class="govuk-accordion__section-header">
+					<h2 class="govuk-accordion__section-heading"><span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-4">No flooding expected</span></h2>
+				</div>
+				<div aria-labelledby="accordion-default-heading-1" class="govuk-accordion__section-content" id="accordion-default-content-1">
+					<p class='govuk-body'>This is the equivalent of a Warning No Longer in Force status. Once flooding has subsided for any of the severities, we should issue this message.</p>
+				</div>
+				<div aria-labelledby="accordion-with-summary-sections-heading-1" class="govuk-accordion__section-content" id="accordion-with-summary-sections-content-1">
+					<table class="govuk-table">
+						<thead class="govuk-table__head">
+							<tr class="govuk-table__row">
+								<th class="govuk-table__header" scope="col">Severity</th>
+								<th class="govuk-table__header" scope="col">Certainty</th>
+								<th class="govuk-table__header" scope="col">Response</th>
+								<th class="govuk-table__header" scope="col">Link</th>
+							</tr>
+						</thead>
+						<tbody class="govuk-table__body">
+							<tr class="govuk-table__row">
+								<td class="govuk-table__cell">None</td>
+								<td class="govuk-table__cell">Observed</td>
+								<td class="govuk-table__cell">AllClear</td>
+								<td>
+									<a class="govuk-link" href="cap/remove/NoneObserved">Click here</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
   </div>
-</div>
-
-<h2 class="govuk-heading-l">Simple example messages</h2>
-
-<h3 class="govuk-heading-m">Minor flooding</h3>
-<ul class="govuk-list govuk-list--bullet">
-  <li><a class="govuk-link" href="cap/alert/MinorPossible">Minor flooding is possible</a></li>
-  <li><a class="govuk-link" href="cap/alert/MinorLikely">Minor flooding is likely</a></li>
-  <li><a class="govuk-link" href="cap/alert/MinorObserved">Minor flooding is occurring</a></li>
-</ul>
-
-<h3 class="govuk-heading-m">Flooding</h3>
-<ul class="govuk-list govuk-list--bullet">
-  <li><a class="govuk-link" href="cap/warning/ModeratePossible.html">Flooding is possible</a></li>
-  <li><a class="govuk-link" href="cap/warning/ModerateLikely.html">Flooding is likely</a></li>
-  <li><a class="govuk-link" href="cap/warning/ModerateObserved.html">Flooding is occurring</a></li>
-</ul>
-
-<h3 class="govuk-heading-m">Severe flooding</h3>
-<ul class="govuk-list govuk-list--bullet">
-  <li><a class="govuk-link" href="cap/severe/SeverePossible.html">Severe flooding is possible</a></li>
-  <li><a class="govuk-link" href="cap/severe/SevereLikely.html">Severe flooding is likely</a></li>
-  <li><a class="govuk-link" href="cap/severe/SevereObserved.html">Severe flooding is occurring</a></li>
-</ul>
-
-
-<h3 class="govuk-heading-m">Additional ideas</h3>
-<p>These examples include a "Headline" field which is also part of CAP. We can use this field to show a brief description of the key flood information in that location.</p>
-<ul class="govuk-list govuk-list--bullet">
-  <li><a class="govuk-link" href="/ur/alertandheadline">Minor flooding with headline</a></li>
-  <li><a class="govuk-link" href="/ur/warningandheadine">Flooding with headline</a></li> 
-  <li><a class="govuk-link" href="/ur/severeandheadline">Severe flooding with headline</a></li> 
-</ul>
-
-
-<h2 class="govuk-heading-l">Detailed example messages</h2>
-
-<div class="govuk-grid-row">
-  <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-with-summary-sections">
-    <div class="govuk-accordion__section ">
-      <div class="govuk-accordion__section-header">
-        <h2 class="govuk-accordion__section-heading">
-          <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-1">
-            Minor flooding
-          </span>
-        </h2>
-      </div>
-      <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-        <p class='govuk-body'>This is broadly equivalent to the existing Flood Alert status. They should be issued for low impact flooding. This could be shallow, slow moving flooding of roads and footpaths, or flooding of areas with little to no impact on people - such as fields or farmland.</p>
-      </div>
-      <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-1">
-        <table class="govuk-table">
-          <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header">Severity</th>
-              <th scope="col" class="govuk-table__header">Certainty</th>
-              <th scope="col" class="govuk-table__header">Response</th>
-              <th scope="col" class="govuk-table__header">Link</th>
-            </tr>
-          </thead>
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Minor</td>
-              <td class="govuk-table__cell">Possible</td>
-              <td class="govuk-table__cell">Prepare</td>
-              <td><a class="govuk-link" href="cap/alert/MinorPossiblePrepare">Click here</a></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Minor</td>
-              <td class="govuk-table__cell">Possible</td>
-              <td class="govuk-table__cell">Monitor</td>
-              <td><a class="govuk-link" href="cap/alert/MinorPossibleMonitor">Click here</a></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Minor</td>
-              <td class="govuk-table__cell">Possible</td>
-              <td class="govuk-table__cell">Avoid</td>
-              <td><a class="govuk-link" href="cap/alert/MinorPossibleAvoid">Click here</a></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Minor</td>
-              <td class="govuk-table__cell">Likely</td>
-              <td class="govuk-table__cell">Prepare</td>
-              <td><a class="govuk-link" href="cap/alert/MinorLikelyPrepare">Click here</a></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Minor</td>
-              <td class="govuk-table__cell">Likely</td>
-              <td class="govuk-table__cell">Monitor</td>
-              <td><a class="govuk-link" href="cap/alert/MinorLikelyMonitor">Click here</a></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Minor</td>
-              <td class="govuk-table__cell">Likely</td>
-              <td class="govuk-table__cell">Avoid</td>
-              <td><a class="govuk-link" href="cap/alert/MinorLikelyAvoid">Click here</a></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Minor</td>
-              <td class="govuk-table__cell">Likely</td>
-              <td class="govuk-table__cell">Execute</td>
-              <td><a class="govuk-link" href="cap/alert/MinorLikelyExecute">Click here</a></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Minor</td>
-              <td class="govuk-table__cell">Observed</td>
-              <td class="govuk-table__cell">Avoid</td>
-              <td><a class="govuk-link" href="cap/alert/MinorObservedAvoid">Click here</a></td>
-            </tr>        
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Minor</td>
-              <td class="govuk-table__cell">Observed</td>
-              <td class="govuk-table__cell">Execute</td>
-              <td><a class="govuk-link" href="cap/alert/MinorObservedExecute">Click here</a></td>
-            </tr>  
-          </tbody>
-        </table>
-        </div>
-    </div>
-    <div class="govuk-accordion__section ">
-      <div class="govuk-accordion__section-header">
-        <h2 class="govuk-accordion__section-heading">
-          <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-2">
-            Flooding
-          </span>
-        </h2>
-      </div>
-      <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-        <p class='govuk-body'>This is equivalent of Flood Warning status. They should be issued when flooding of properties is expected, or when the flooding will impact people, such as flooding of major roads or infrastructure </p>
-      </div>
-      <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-1">
-      <table class="govuk-table">
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header">Severity</th>
-            <th scope="col" class="govuk-table__header">Certainty</th>
-            <th scope="col" class="govuk-table__header">Response</th>
-            <th scope="col" class="govuk-table__header">Link</th>
-          </tr>
-        </thead>
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Moderate</td>
-            <td class="govuk-table__cell">Possible</td>
-            <td class="govuk-table__cell">Prepare</td>
-            <td><a class="govuk-link" href="cap/warning/ModeratePossiblePrepare">Click here</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Moderate</td>
-            <td class="govuk-table__cell">Possible</td>
-            <td class="govuk-table__cell">Monitor</td>
-            <td><a class="govuk-link" href="cap/warning/ModeratePossibleMonitor">Click here</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Moderate</td>
-            <td class="govuk-table__cell">Possible</td>
-            <td class="govuk-table__cell">Avoid</td>
-            <td><a class="govuk-link" href="cap/warning/ModeratePossibleAvoid">Click here</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Moderate</td>
-            <td class="govuk-table__cell">Likely</td>
-            <td class="govuk-table__cell">Prepare</td>
-            <td><a class="govuk-link" href="cap/warning/ModerateLikelyPrepare">Click here</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Moderate</td>
-            <td class="govuk-table__cell">Likely</td>
-            <td class="govuk-table__cell">Monitor</td>
-            <td><a class="govuk-link" href="cap/warning/ModerateLikelyMonitor">Click here</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Moderate</td>
-            <td class="govuk-table__cell">Likely</td>
-            <td class="govuk-table__cell">Avoid</td>
-            <td><a class="govuk-link" href="cap/warning/ModerateLikelyAvoid">Click here</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Moderate</td>
-            <td class="govuk-table__cell">Likely</td>
-            <td class="govuk-table__cell">Execute</td>
-            <td><a class="govuk-link" href="cap/warning/ModerateLikelyExecute">Click here</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Moderate</td>
-            <td class="govuk-table__cell">Observed</td>
-            <td class="govuk-table__cell">Avoid</td>
-            <td><a class="govuk-link" href="cap/warning/ModerateObservedAvoid">Click here</a></td>
-          </tr>    
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Moderate</td>
-            <td class="govuk-table__cell">Observed</td>
-            <td class="govuk-table__cell">Execute</td>
-            <td><a class="govuk-link" href="cap/warning/ModerateObservedExecute">Click here</a></td>
-          </tr>        
-        </tbody>
-      </table>
-    </div>
-</div>
-    <div class="govuk-accordion__section ">
-      <div class="govuk-accordion__section-header">
-        <h2 class="govuk-accordion__section-heading">
-          <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-3">
-            Severe flooding
-          </span>
-        </h2>
-      </div>
-      <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-        <p class='govuk-body'>This is equivalent of Severe Flood Warning status. They should be issued when there is a risk to life or significant disruption for people in that area - including infrastructure impacts. Flood waters may be deep or fast flowing.  Evacuations may be required and emergency services and local authorities will be involved.</p>
-      </div>
-      <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-1">
-      <table class="govuk-table">
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header">Severity</th>
-            <th scope="col" class="govuk-table__header">Certainty</th>
-            <th scope="col" class="govuk-table__header">Response</th>
-            <th scope="col" class="govuk-table__header">Link</th>
-          </tr>
-        </thead>
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Severe</td>
-            <td class="govuk-table__cell">Possible</td>
-            <td class="govuk-table__cell">Prepare</td>
-            <td><a class="govuk-link" href="cap/severe/SeverePossiblePrepare">Click here</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Severe</td>
-            <td class="govuk-table__cell">Possible</td>
-            <td class="govuk-table__cell">Monitor</td>
-            <td><a class="govuk-link" href="cap/severe/SeverePossibleMonitor">Click here</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Severe</td>
-            <td class="govuk-table__cell">Possible</td>
-            <td class="govuk-table__cell">Avoid</td>
-            <td><a class="govuk-link" href="cap/severe/SeverePossibleAvoid">Click here</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Severe</td>
-            <td class="govuk-table__cell">Likely</td>
-            <td class="govuk-table__cell">Monitor</td>
-            <td><a class="govuk-link" href="cap/severe/SevereLikelyMonitor">Click here</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Severe</td>
-            <td class="govuk-table__cell">Likely</td>
-            <td class="govuk-table__cell">Avoid</td>
-            <td><a class="govuk-link" href="cap/severe/SevereLikelyAvoid">Click here</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Severe</td>
-            <td class="govuk-table__cell">Likely</td>
-            <td class="govuk-table__cell">Execute</td>
-            <td><a class="govuk-link" href="cap/severe/SevereLikelyExecute">Click here</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Severe</td>
-            <td class="govuk-table__cell">Likely</td>
-            <td class="govuk-table__cell">Evacuate</td>
-            <td><a class="govuk-link" href="cap/severe/SevereLikelyEvacuate">Click here</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Severe</td>
-            <td class="govuk-table__cell">Observed</td>
-            <td class="govuk-table__cell">Avoid</td>
-            <td><a class="govuk-link" href="cap/severe/SevereObservedAvoid">Click here</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Severe</td>
-            <td class="govuk-table__cell">Observed</td>
-            <td class="govuk-table__cell">Evacuate</td>
-            <td><a class="govuk-link" href="cap/severe/SevereObservedEvacuate">Click here</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Severe</td>
-            <td class="govuk-table__cell">Observed</td>
-            <td class="govuk-table__cell">Shelter</td>
-            <td><a class="govuk-link" href="cap/severe/SevereObservedShelter">Click here</a></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-</div>
-    <div class="govuk-accordion__section ">
-      <div class="govuk-accordion__section-header">
-        <h2 class="govuk-accordion__section-heading">
-          <span class="govuk-accordion__section-button" id="accordion-with-summary-sections-heading-4">
-            No flooding expected
-          </span>
-        </h2>
-      </div>
-      <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-        <p class='govuk-body'>This is the equivalent of a Warning No Longer in Force status. Once flooding has subsided for any of the severities, we should issue this message.  </p>
-      </div>
-      <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-1">
-        <table class="govuk-table">
-          <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header">Severity</th>
-              <th scope="col" class="govuk-table__header">Certainty</th>
-              <th scope="col" class="govuk-table__header">Response</th>
-              <th scope="col" class="govuk-table__header">Link</th>
-            </tr>
-          </thead>
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">None</td>
-              <td class="govuk-table__cell">Observed</td>
-              <td class="govuk-table__cell">AllClear</td>
-              <td><a class="govuk-link" href="cap/remove/NoneObserved">Click here</a></td>
-            </tr>       
-          </tbody>
-        </table>
-      </div>        
-    </div>
-  </div>
-</div>
-
-{% endblock %}
+  {% endblock %}
