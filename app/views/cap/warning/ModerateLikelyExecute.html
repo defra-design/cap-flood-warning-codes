@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Alert
+  Warning
 {% endblock %}
 
 {% block content %}
@@ -16,27 +16,27 @@
   
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <div class="defra-flood-status govuk-!-margin-bottom-4">
-      <div class="defra-flood-status-item defra-flood-status-item--alert">
+    <div class="defra-flood-status govuk-!-margin-bottom-3">
+      <div class="defra-flood-status-item defra-flood-status-item--warning">
         <span class="defra-flood-status-item__icon"></span>
         <div class="defra-flood-status-item__text">
-          <strong>Minor flooding is possible in the near future.</strong>
-          <strong>Avoid the area.</strong>
+          <strong>Flooding is likely</strong>
+          <strong>Take action</strong>
         </div>
       </div>
     </div>
-    <h1 class="govuk-heading-xl">
-      Ginge Brook
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
+      Cocker Beck at Lowdham
     </h1>
+    <p class="defra-updated govuk-!-margin-bottom-7">
+      Updated <time datetime="2020-03-30T08:55:00.000Z">30 March 2020 at 9:55am</time>
+    </p>
   </div>
 </div>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inci ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p class="defra-updated govuk-!-margin-bottom-4">
-      Updated <time datetime="2020-03-30T08:55:00.000Z">30 March 2020 at 9:55am</time>
-    </p>
-    <p>Flood risk area: Ginge Brook, for the Steventon area down to and including Sutton Courtenay</p>
+    <p>Flood risk area: Cocker Beck at Lowdham and properties at Lowdham around Southwell Road</p>
     <button id="map-btn" class="defra-button-map govuk-!-margin-bottom-6">View map of the flood risk area</button><div class="defra-map" id="map-live"></div>
 
     <h2 class="govuk-heading-m">Check river or sea levels</h2>

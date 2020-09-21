@@ -2,7 +2,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Alert
+  Severe
 {% endblock %}
 
 {% block content %}
@@ -16,28 +16,27 @@
   
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <div class="defra-flood-status govuk-!-margin-bottom-4">
-      <div class="defra-flood-status-item defra-flood-status-item--alert">
+    <div class="defra-flood-status govuk-!-margin-bottom-3">
+      <div class="defra-flood-status-item defra-flood-status-item--severe">
         <span class="defra-flood-status-item__icon"></span>
         <div class="defra-flood-status-item__text">
-          <strong>Minor flooding is possible</strong>
-          <strong>Monitor the situation</strong>
+          <strong>Severe flooding is occurring</strong>
+          <strong>Evacuate the area</strong>
         </div>
       </div>
     </div>
-    <h1 class="govuk-heading-xl">
-      River Mease
-
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">
+      River Lugg at Hampton Bishop
     </h1>
+    <p class="defra-updated govuk-!-margin-bottom-7">
+      Updated <time datetime="2020-02-18T16:14:00.000Z">18 February 2020 at 4:14pm</time>
+    </p>
   </div>
 </div>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <p>River levels have risen at the Clifton Hall river gauge as a result of persistent heavy rainfall. Consequently, flooding of roads and farmland is possible today. Flooding is affecting the Harlaston to Edingale Road and low-lying land and roads adjacent to the River Mease and Gilwiskaw Brook between Ashby and Croxall. No further rainfall is forecast. We expect river levels to remain high until tomorrow morning 02/08/2019. We are closely monitoring the situation. Our incident response staff are actively checking river levels and the weather forecast. Please plan driving routes to avoid low lying roads near rivers, which may be flooded. This message will be updated this evening 01/08/2019.</p>
-    <p class="defra-updated govuk-!-margin-bottom-4">
-      Updated <time datetime="2019-01-08T10:01:00.000Z">8 January 2019 at 10:01am</time>
-    </p>
-    <p>Flood risk area: Low-lying land and roads between Ashby and Croxall</p>
+    <p>This Severe Warning remains in force because of flooding cutting off the area. River levels remain high at the Lugwardine river gauge as a result of persistent heavy rainfall. Consequently, flooding of property continues. Flooding is affecting isolated properties in Sutton St Nicholas. Scattered showers are expected over the next 24 hours with further prolonged rainfall forecast from midday on Wednesday 19/02/20. We expect river levels to remain high for several days. We are closely monitoring the situation. Our incident response staff are liaising with emergency services. Please call 999 if in immediate danger. Please avoid contact with flood water. This message will be updated by 8pm on Tuesday 18/02/20, or as the situation changes.</p>
+    <p>Flood risk area: River Lugg at Hampton Bishop</p>
     <button id="map-btn" class="defra-button-map govuk-!-margin-bottom-6">View map of the flood risk area</button><div class="defra-map" id="map-live"></div>
 
     <h2 class="govuk-heading-m">Check river or sea levels</h2>

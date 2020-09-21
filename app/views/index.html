@@ -20,12 +20,19 @@
     <p>
       This site contains mock ups of flood warning messages presented with <a href="https://docs.oasis-open.org/emergency/cap/v1.2/CAP-v1.2-os.html">Common Alerting Protocol (CAP)</a> information as it could be displayed on the new Flood Information Service pages on GOV.UK.
     </p> 
+    <p>The main CAP fields looked at are:</p>
+    <ul>
+    <li>Severity</li>
+    <li>Certainty</li>
+    <li>Response</li>
+    </ul>
+    </p>
+    <p>
+      "Urgency" could be used as a mechanism for prioritising the message sending process - for ecample, a warning with an "immediate" urgency will be issued before a warning with a "future" urgency. We could use the "Response" field to show specific actions for the incident.
+    </p>  
     <p>
       These are just examples. Not all combinations of CAP will be appropriate for the flood warning service.
     </p>
-    <p>
-      It is also possible to stipulate "Response" with specific actions for the incident. These should also be considered for inclusion in a CAP based flood warning service to give clear guidance on what action people should take in that specific flood incident.
-    </p>  
   </div>
 </div>
 
@@ -35,29 +42,31 @@
 <ul class="govuk-list govuk-list--bullet">
   <li><a class="govuk-link" href="cap/alert/MinorPossible">Minor flooding is possible</a></li>
   <li><a class="govuk-link" href="cap/alert/MinorLikely">Minor flooding is likely</a></li>
-  <li><a class="govuk-link" href="cap/alert/MinorObservedImmediate">Minor flooding is occurring</a></li>
-</ul>
-
-<h3 class="govuk-heading-m">Additional ideas</h3>
-<ul class="govuk-list govuk-list--bullet">
-  <li><a class="govuk-link" href="/ur/alert">Minor flooding with advice</a></li>
-  <li><a class="govuk-link" href="/ur/alertandheadline">Minor flooding with advice and headline</a></li>
-  <li><a class="govuk-link" href="/ur/warningandheadine">Flooding with advice and headline</a></li> 
+  <li><a class="govuk-link" href="cap/alert/MinorObserved">Minor flooding is occurring</a></li>
 </ul>
 
 <h3 class="govuk-heading-m">Flooding</h3>
 <ul class="govuk-list govuk-list--bullet">
   <li><a class="govuk-link" href="cap/warning/ModeratePossible.html">Flooding is possible</a></li>
   <li><a class="govuk-link" href="cap/warning/ModerateLikely.html">Flooding is likely</a></li>
-  <li><a class="govuk-link" href="cap/warning/ModerateObservedImmediate.html">Flooding is occurring</a></li>
+  <li><a class="govuk-link" href="cap/warning/ModerateObserved.html">Flooding is occurring</a></li>
 </ul>
 
 <h3 class="govuk-heading-m">Severe flooding</h3>
 <ul class="govuk-list govuk-list--bullet">
   <li><a class="govuk-link" href="cap/severe/SeverePossible.html">Severe flooding is possible</a></li>
   <li><a class="govuk-link" href="cap/severe/SevereLikely.html">Severe flooding is likely</a></li>
-  <li><a class="govuk-link" href="cap/severe/SevereObservedImmediate.html">Severe flooding is occurring</a></li>
+  <li><a class="govuk-link" href="cap/severe/SevereObserved.html">Severe flooding is occurring</a></li>
 </ul>
+
+
+<h3 class="govuk-heading-m">Additional ideas</h3>
+<p>These examples include a "Headline" field which is also part of CAP. We can use this field to show a brief description of the key flood information in that location.</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li><a class="govuk-link" href="/ur/alertandheadline">Minor flooding with advice and headline</a></li>
+  <li><a class="govuk-link" href="/ur/warningandheadine">Flooding with advice and headline</a></li> 
+</ul>
+
 
 <h2 class="govuk-heading-l">Detailed example messages</h2>
 
@@ -72,7 +81,7 @@
         </h2>
       </div>
       <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-        <p class='govuk-body'>This is broadly equivalent to the existing Flood Alert status. They should be issued for low impact flooding. This could be shallow flooding of roads and footpaths, or flooding of areas with little to no impact on people - such as fields or farmland.</p>
+        <p class='govuk-body'>This is broadly equivalent to the existing Flood Alert status. They should be issued for low impact flooding. This could be shallow, slow moving flooding of roads and footpaths, or flooding of areas with little to no impact on people - such as fields or farmland.</p>
       </div>
       <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-1">
         <table class="govuk-table">
@@ -80,7 +89,6 @@
             <tr class="govuk-table__row">
               <th scope="col" class="govuk-table__header">Severity</th>
               <th scope="col" class="govuk-table__header">Certainty</th>
-              <th scope="col" class="govuk-table__header">Urgency</th>
               <th scope="col" class="govuk-table__header">Response</th>
               <th scope="col" class="govuk-table__header">Link</th>
             </tr>
@@ -89,66 +97,57 @@
             <tr class="govuk-table__row">
               <td class="govuk-table__cell">Minor</td>
               <td class="govuk-table__cell">Possible</td>
-              <td class="govuk-table__cell">Future</td>
-              <td class="govuk-table__cell">-</td>
-              <td><a class="govuk-link" href="cap/alert/MinorPossibleFuture">Click here</a></td>
+              <td class="govuk-table__cell">Prepare</td>
+              <td><a class="govuk-link" href="cap/alert/MinorPossiblePrepare">Click here</a></td>
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell">Minor</td>
               <td class="govuk-table__cell">Possible</td>
-              <td class="govuk-table__cell">Future</td>
               <td class="govuk-table__cell">Monitor</td>
-              <td><a class="govuk-link" href="cap/alert/MinorPossibleFutureMonitor">Click here</a></td>
+              <td><a class="govuk-link" href="cap/alert/MinorPossibleMonitor">Click here</a></td>
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell">Minor</td>
               <td class="govuk-table__cell">Possible</td>
-              <td class="govuk-table__cell">Future</td>
               <td class="govuk-table__cell">Avoid</td>
-              <td><a class="govuk-link" href="cap/alert/MinorPossibleFutureAvoid">Click here</a></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Minor</td>
-              <td class="govuk-table__cell">Possible</td>
-              <td class="govuk-table__cell">Expected</td>
-              <td class="govuk-table__cell">-</td>
-              <td><a class="govuk-link" href="cap/alert/MinorPossibleExpected">Click here</a></td>
+              <td><a class="govuk-link" href="cap/alert/MinorPossibleAvoid">Click here</a></td>
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell">Minor</td>
               <td class="govuk-table__cell">Likely</td>
-              <td class="govuk-table__cell">Future</td>
-              <td class="govuk-table__cell">-</td>
-              <td><a class="govuk-link" href="cap/alert/MinorLikelyFuture">Click here</a></td>
+              <td class="govuk-table__cell">Prepare</td>
+              <td><a class="govuk-link" href="cap/alert/MinorLikelyPrepare">Click here</a></td>
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell">Minor</td>
               <td class="govuk-table__cell">Likely</td>
-              <td class="govuk-table__cell">Expected</td>
-              <td class="govuk-table__cell">-</td>
-              <td><a class="govuk-link" href="cap/alert/MinorLikelyExpected">Click here</a></td>
+              <td class="govuk-table__cell">Monitor</td>
+              <td><a class="govuk-link" href="cap/alert/MinorLikelyMonitor">Click here</a></td>
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell">Minor</td>
               <td class="govuk-table__cell">Likely</td>
-              <td class="govuk-table__cell">Expected</td>
+              <td class="govuk-table__cell">Avoid</td>
+              <td><a class="govuk-link" href="cap/alert/MinorLikelyAvoid">Click here</a></td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Minor</td>
+              <td class="govuk-table__cell">Likely</td>
               <td class="govuk-table__cell">Execute</td>
-              <td><a class="govuk-link" href="cap/alert/MinorLikelyExpectedExecute">Click here</a></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">Minor</td>
-              <td class="govuk-table__cell">Likely</td>
-              <td class="govuk-table__cell">Immediate</td>
-              <td class="govuk-table__cell">-</td>
-              <td><a class="govuk-link" href="cap/alert/MinorLikelyImmediate">Click here</a></td>
+              <td><a class="govuk-link" href="cap/alert/MinorLikelyExecute">Click here</a></td>
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell">Minor</td>
               <td class="govuk-table__cell">Observed</td>
-              <td class="govuk-table__cell">Immediate</td>
-              <td class="govuk-table__cell">-</td>
-              <td><a class="govuk-link" href="cap/alert/MinorObservedImmediate">Click here</a></td>
+              <td class="govuk-table__cell">Avoid</td>
+              <td><a class="govuk-link" href="cap/alert/MinorObservedAvoid">Click here</a></td>
             </tr>        
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Minor</td>
+              <td class="govuk-table__cell">Observed</td>
+              <td class="govuk-table__cell">Execute</td>
+              <td><a class="govuk-link" href="cap/alert/MinorObservedExecute">Click here</a></td>
+            </tr>  
           </tbody>
         </table>
         </div>
@@ -170,7 +169,6 @@
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header">Severity</th>
             <th scope="col" class="govuk-table__header">Certainty</th>
-            <th scope="col" class="govuk-table__header">Urgency</th>
             <th scope="col" class="govuk-table__header">Response</th>
             <th scope="col" class="govuk-table__header">Link</th>
           </tr>
@@ -179,58 +177,56 @@
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">Moderate</td>
             <td class="govuk-table__cell">Possible</td>
-            <td class="govuk-table__cell">Future</td>
-            <td class="govuk-table__cell">-</td>
-            <td><a class="govuk-link" href="cap/warning/ModeratePossibleFuture">Click here</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Moderate</td>
-            <td class="govuk-table__cell">Possible</td>
-            <td class="govuk-table__cell">Expected</td>
-            <td class="govuk-table__cell">-</td>
-            <td><a class="govuk-link" href="cap/warning/ModeratePossibleExpected">Click here</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Moderate</td>
-            <td class="govuk-table__cell">Possible</td>
-            <td class="govuk-table__cell">Expected</td>
             <td class="govuk-table__cell">Prepare</td>
-            <td><a class="govuk-link" href="cap/warning/ModeratePossibleExpectedPrepare">Click here</a></td>
+            <td><a class="govuk-link" href="cap/warning/ModeratePossiblePrepare">Click here</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Moderate</td>
+            <td class="govuk-table__cell">Possible</td>
+            <td class="govuk-table__cell">Monitor</td>
+            <td><a class="govuk-link" href="cap/warning/ModeratePossibleMonitor">Click here</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Moderate</td>
+            <td class="govuk-table__cell">Possible</td>
+            <td class="govuk-table__cell">Avoid</td>
+            <td><a class="govuk-link" href="cap/warning/ModeratePossibleAvoid">Click here</a></td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">Moderate</td>
             <td class="govuk-table__cell">Likely</td>
-            <td class="govuk-table__cell">Future</td>
-            <td class="govuk-table__cell">-</td>
-            <td><a class="govuk-link" href="cap/warning/ModerateLikelyFuture">Click here</a></td>
+            <td class="govuk-table__cell">Prepare</td>
+            <td><a class="govuk-link" href="cap/warning/ModerateLikelyPrepare">Click here</a></td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">Moderate</td>
             <td class="govuk-table__cell">Likely</td>
-            <td class="govuk-table__cell">Expected</td>
-            <td class="govuk-table__cell">-</td>
-            <td><a class="govuk-link" href="cap/warning/ModerateLikelyExpected">Click here</a></td>
+            <td class="govuk-table__cell">Monitor</td>
+            <td><a class="govuk-link" href="cap/warning/ModerateLikelyMonitor">Click here</a></td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">Moderate</td>
             <td class="govuk-table__cell">Likely</td>
-            <td class="govuk-table__cell">Expected</td>
+            <td class="govuk-table__cell">Avoid</td>
+            <td><a class="govuk-link" href="cap/warning/ModerateLikelyAvoid">Click here</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Moderate</td>
+            <td class="govuk-table__cell">Likely</td>
             <td class="govuk-table__cell">Execute</td>
-            <td><a class="govuk-link" href="cap/warning/ModerateLikelyExpectedExecute">Click here</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Moderate</td>
-            <td class="govuk-table__cell">Likely</td>
-            <td class="govuk-table__cell">Immediate</td>
-            <td class="govuk-table__cell">-</td>
-            <td><a class="govuk-link" href="cap/warning/ModerateLikelyImmediate">Click here</a></td>
+            <td><a class="govuk-link" href="cap/warning/ModerateLikelyExecute">Click here</a></td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">Moderate</td>
             <td class="govuk-table__cell">Observed</td>
-            <td class="govuk-table__cell">Immediate</td>
-            <td class="govuk-table__cell">-</td>
-            <td><a class="govuk-link" href="cap/warning/ModerateObservedImmediate">Click here</a></td>
+            <td class="govuk-table__cell">Avoid</td>
+            <td><a class="govuk-link" href="cap/warning/ModerateObservedAvoid">Click here</a></td>
+          </tr>    
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Moderate</td>
+            <td class="govuk-table__cell">Observed</td>
+            <td class="govuk-table__cell">Execute</td>
+            <td><a class="govuk-link" href="cap/warning/ModerateObservedExecute">Click here</a></td>
           </tr>        
         </tbody>
       </table>
@@ -245,7 +241,7 @@
         </h2>
       </div>
       <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-        <p class='govuk-body'>This is equivalent of Severe Flood Warning status. They should be issued when there is a risk to life or significant disruption for people in that area. Flood waters may be deep or fast flowing.  Evacuations may be required and emergency services and local authorities will be heavily involved.</p>
+        <p class='govuk-body'>This is equivalent of Severe Flood Warning status. They should be issued when there is a risk to life or significant disruption for people in that area - including infrastructure impacts. Flood waters may be deep or fast flowing.  Evacuations may be required and emergency services and local authorities will be involved.</p>
       </div>
       <div id="accordion-with-summary-sections-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-with-summary-sections-heading-1">
       <table class="govuk-table">
@@ -253,7 +249,6 @@
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header">Severity</th>
             <th scope="col" class="govuk-table__header">Certainty</th>
-            <th scope="col" class="govuk-table__header">Urgency</th>
             <th scope="col" class="govuk-table__header">Response</th>
             <th scope="col" class="govuk-table__header">Link</th>
           </tr>
@@ -262,52 +257,63 @@
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">Severe</td>
             <td class="govuk-table__cell">Possible</td>
-            <td class="govuk-table__cell">Future</td>
-            <td class="govuk-table__cell">-</td>
-            <td><a class="govuk-link" href="cap/severe/SeverePossibleFuture">Click here</a></td>
+            <td class="govuk-table__cell">Prepare</td>
+            <td><a class="govuk-link" href="cap/severe/SeverePossiblePrepare">Click here</a></td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">Severe</td>
             <td class="govuk-table__cell">Possible</td>
-            <td class="govuk-table__cell">Expected</td>
-            <td class="govuk-table__cell">-</td>
-            <td><a class="govuk-link" href="cap/severe/SeverePossibleExpected">Click here</a></td>
+            <td class="govuk-table__cell">Monitor</td>
+            <td><a class="govuk-link" href="cap/severe/SeverePossibleMonitor">Click here</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Severe</td>
+            <td class="govuk-table__cell">Possible</td>
+            <td class="govuk-table__cell">Avoid</td>
+            <td><a class="govuk-link" href="cap/severe/SeverePossibleAvoid">Click here</a></td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">Severe</td>
             <td class="govuk-table__cell">Likely</td>
-            <td class="govuk-table__cell">Future</td>
-            <td class="govuk-table__cell">-</td>
-            <td><a class="govuk-link" href="cap/severe/SevereLikelyFuture">Click here</a></td>
+            <td class="govuk-table__cell">Monitor</td>
+            <td><a class="govuk-link" href="cap/severe/SevereLikelyMonitor">Click here</a></td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">Severe</td>
             <td class="govuk-table__cell">Likely</td>
-            <td class="govuk-table__cell">Expected</td>
-            <td class="govuk-table__cell">-</td>
-            <td><a class="govuk-link" href="cap/severe/SevereLikelyExpected">Click here</a></td>
+            <td class="govuk-table__cell">Avoid</td>
+            <td><a class="govuk-link" href="cap/severe/SevereLikelyAvoid">Click here</a></td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">Severe</td>
             <td class="govuk-table__cell">Likely</td>
-            <td class="govuk-table__cell">Expected</td>
+            <td class="govuk-table__cell">Execute</td>
+            <td><a class="govuk-link" href="cap/severe/SevereLikelyExecute">Click here</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Severe</td>
+            <td class="govuk-table__cell">Likely</td>
             <td class="govuk-table__cell">Evacuate</td>
-            <td><a class="govuk-link" href="cap/severe/SevereLikelyExpectedEvacuate">Click here</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Severe</td>
-            <td class="govuk-table__cell">Likely</td>
-            <td class="govuk-table__cell">Immediate</td>
-            <td class="govuk-table__cell">-</td>
-            <td><a class="govuk-link" href="cap/severe/SevereLikelyImmediate">Click here</a></td>
+            <td><a class="govuk-link" href="cap/severe/SevereLikelyEvacuate">Click here</a></td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">Severe</td>
             <td class="govuk-table__cell">Observed</td>
-            <td class="govuk-table__cell">Immediate</td>
-            <td class="govuk-table__cell">-</td>
-            <td><a class="govuk-link" href="cap/severe/SevereObservedImmediate">Click here</a></td>
-          </tr>        
+            <td class="govuk-table__cell">Avoid</td>
+            <td><a class="govuk-link" href="cap/severe/SevereObservedAvoid">Click here</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Severe</td>
+            <td class="govuk-table__cell">Observed</td>
+            <td class="govuk-table__cell">Evacuate</td>
+            <td><a class="govuk-link" href="cap/severe/SevereObservedEvacuate">Click here</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Severe</td>
+            <td class="govuk-table__cell">Observed</td>
+            <td class="govuk-table__cell">Shelter</td>
+            <td><a class="govuk-link" href="cap/severe/SevereObservedShelter">Click here</a></td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -329,7 +335,6 @@
             <tr class="govuk-table__row">
               <th scope="col" class="govuk-table__header">Severity</th>
               <th scope="col" class="govuk-table__header">Certainty</th>
-              <th scope="col" class="govuk-table__header">Urgency</th>
               <th scope="col" class="govuk-table__header">Response</th>
               <th scope="col" class="govuk-table__header">Link</th>
             </tr>
@@ -338,35 +343,30 @@
             <tr class="govuk-table__row">
               <td class="govuk-table__cell">Extreme</td>
               <td class="govuk-table__cell">Possible</td>
-              <td class="govuk-table__cell">Expected</td>
               <td class="govuk-table__cell">-</td>
               <td><a class="govuk-link" href="cap/extreme/ExtremePossibleExpected">Click here</a></td>
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell">Extreme</td>
               <td class="govuk-table__cell">Likely</td>
-              <td class="govuk-table__cell">Future</td>
               <td class="govuk-table__cell">-</td>
               <td><a class="govuk-link" href="cap/extreme/ExtremeLikelyFuture">Click here</a></td>
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell">Extreme</td>
               <td class="govuk-table__cell">Likely</td>
-              <td class="govuk-table__cell">Expected</td>
               <td class="govuk-table__cell">-</td>
               <td><a class="govuk-link" href="cap/extreme/ExtremeLikelyExpected">Click here</a></td>
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell">Extreme</td>
               <td class="govuk-table__cell">Likely</td>
-              <td class="govuk-table__cell">Immediate</td>
               <td class="govuk-table__cell">-</td>
               <td><a class="govuk-link" href="cap/extreme/ExtremeLikelyImmediate">Click here</a></td>
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell">Extreme</td>
               <td class="govuk-table__cell">Observed</td>
-              <td class="govuk-table__cell">Immediate</td>
               <td class="govuk-table__cell">-</td>
               <td><a class="govuk-link" href="cap/extreme/ExtremeObservedImmediate">Click here</a></td>
             </tr>        
@@ -391,7 +391,6 @@
             <tr class="govuk-table__row">
               <th scope="col" class="govuk-table__header">Severity</th>
               <th scope="col" class="govuk-table__header">Certainty</th>
-              <th scope="col" class="govuk-table__header">Urgency</th>
               <th scope="col" class="govuk-table__header">Response</th>
               <th scope="col" class="govuk-table__header">Link</th>
             </tr>
@@ -400,9 +399,8 @@
             <tr class="govuk-table__row">
               <td class="govuk-table__cell">None</td>
               <td class="govuk-table__cell">Observed</td>
-              <td class="govuk-table__cell">Past</td>
               <td class="govuk-table__cell">AllClear</td>
-              <td><a class="govuk-link" href="cap/remove/NoneObservedPast">Click here</a></td>
+              <td><a class="govuk-link" href="cap/remove/NoneObserved">Click here</a></td>
             </tr>       
           </tbody>
         </table>
